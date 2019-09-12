@@ -43,6 +43,8 @@ def generate_csv(labels, bucket_name, n, rename=False):
                     writer.writerow(["TRAIN",
                                     f"gs://{bucket_name}/{path}",
                                     label])
+                    
+# get_crop_hint and crop_to_hint were adapted from https://cloud.google.com/vision/docs/crop-hints
 
 def get_crop_hint(path):
     """Detect crop hints on a single image and return the first result."""
